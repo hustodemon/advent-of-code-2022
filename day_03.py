@@ -6,6 +6,7 @@
 # - division: /, whole number division: //
 # - list split: [:2], [2:], [-1:], [:-1]
 # - set: adding with .add(x)
+# - itertools.chain.from_iterable
 #
 
 import utils
@@ -43,11 +44,23 @@ data = utils.read_lines("data/day_03.txt")
 print_result(1, part_1(data))
 
 
-
 #
 # Part 2
 #
+def part_2(data):
+    i = 0
+    sum_priorities = 0
+    while i + 2 <= len(data):
+        s1 = data[i]
+        s2 = data[i + 1]
+        s3 = data[i + 2]
+        common_elements = set([e for e in s1 if e in s2 and e in s3])
+        sum_priorities += priority(next(iter(common_elements)))
+        i += 3
+    return sum_priorities
 
+print_result(2, part_2(test_data), True)
+print_result(2, part_2(data))
 
 #
 # People's solution
