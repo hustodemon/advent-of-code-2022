@@ -1,0 +1,13 @@
+#+title: Readme
+
+* Things to try out
+** Numpy
+** Generators
+** List comprehensions
+** Lazy stuff
+** Typed Python
+** functools
+** itertools
+** linters
+** DONE String formatting: f-strings FTW!
+They look great: =f"bla is {bla_val}"=
