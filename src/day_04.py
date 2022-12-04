@@ -2,10 +2,15 @@
 #
 # Day 4
 #
+# I wanted to avoid numpy (saving that for later ;)), rather than that, I wanted
+# to learn more about python classes.
+#
 # Lessons learned:
-# - simple class
+# - simple class (that's why this solution is so long :) )
 # - __repr__ (= .toString() in python)
 # - types
+# - pytest (setting the paths correctly was "fun")
+#   - pytest.mark.parametrize looks nice!
 #
 
 from utils import print_result, read_lines
@@ -40,7 +45,7 @@ class SimpleInterval:
         return self.start_incl <= other.start_incl and self.end_incl >= other.end_incl
 
 
-    def intersect_interval(self, other):
+    def overlaps_interval(self, other):
         if self.start_incl <= other.start_incl:
             return other.start_incl <= self.end_incl
         else:
@@ -64,10 +69,15 @@ class Line:
         self.interval_2 = interval_2
 
 
-    def has_redundant_interval(self) -> bool:
+    def is_contained(self) -> bool:
         """True if one interval contains the other."""
         return self.interval_1.contains_interval(self.interval_2) or \
              self.interval_2.contains_interval(self.interval_1)
+
+
+    def is_overlapping(self) -> bool:
+        """True if one interval overlaps other"""
+        return self.interval_1.overlaps_interval(self.interval_2)
 
 
     @staticmethod
@@ -75,35 +85,30 @@ class Line:
         interval_1, interval_2 = map(SimpleInterval.parse, line.split(","))
         return Line(interval_1, interval_2)
 
+
     def __repr__(self):
         return f"{self.interval_1} - {self.interval_2}"
 
 
+def count_contained(lines):
+    return len([l for l in lines if Line.parse(l).is_contained()])
 
-class Groups:
-    """Groups of elves and their sections"""
-    def __init__(self, lines: List[Line]):
-        pass
-
-#    @staticmethod
-#    def parse(lines: str) -> List[Groups]:
-#        for i in range(0, len(lines), 2):
-#        return [Line.parse(l) for l in lines ]
+print_result(1, count_contained(lines_test), True)
+print_result(1, count_contained(lines))
 
 
-
-#Line.parse("3-4,3-5").has_redundant_interval()
-#Groups.parse(lines_test)
-
-def count_overlapping(lines):
-    return len([res for l in lines if (res := Line.parse(l)).has_redundant_interval()])
-
-count_overlapping(lines)
-
-
+#
 # Part 2
 #
+def count_overlapping(lines):
+    return len([l for l in lines if Line.parse(l).is_overlapping()])
+
+print_result(2, count_overlapping(lines_test), True)
+print_result(2, count_overlapping(lines))
 
 #
 # People's solution
+#
+# This is pretty cool :) https://github.com/ThePituLegend/advent-of-code/tree/2022/day4
+# (but it seems he generates sets of numbers, like many other solutions, which i don't like)
 #

@@ -1,7 +1,10 @@
 #+title: Readme
 
+This is an attempt to solve AOC 2022 while exploring python features, that are
+new to me (almost all of them, actually).
+
 * Things to try out
-** requirements.txt
+** Importing stuff!
 ** Numpy
 ** Generators
 ** List comprehensions
@@ -15,3 +18,5 @@
 CLOSED: [2022-12-04 So 08:02]
 ** DONE String formatting: f-strings FTW!
 They look great: =f"bla is {bla_val}"=
+** DONE requirements.txt
+CLOSED: [2022-12-04 So 20:38]
