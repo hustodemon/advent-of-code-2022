@@ -6,6 +6,7 @@
 # - f-strings
 # - list comprehensions (see below)
 # - default args (print function)
+# - with open('bla') as bleh:
 #
 
 from utils import print_result

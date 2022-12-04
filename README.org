@@ -1,6 +1,7 @@
 #+title: Readme
 
 * Things to try out
+** requirements.txt
 ** Numpy
 ** Generators
 ** List comprehensions
@@ -9,5 +10,8 @@
 ** functools
 ** itertools
 ** linters
+* Done
+** DONE virtual environments
+CLOSED: [2022-12-04 So 08:02]
 ** DONE String formatting: f-strings FTW!
 They look great: =f"bla is {bla_val}"=
