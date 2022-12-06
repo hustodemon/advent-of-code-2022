@@ -16,8 +16,8 @@ print("> Day 6")
 # Part 1
 #
 def compute(signal, marker_len = 4):
-    return [i for i in range(marker_len, len(signal) - 1)
-            if len(set(signal[i-marker_len:i])) == marker_len][0]
+    return next(i for i in range(marker_len, len(signal) - 1)
+                if len(set(signal[i-marker_len:i])) == marker_len)
 
 
 test_input = "mjqjpqmgbljsphdztnvjfqwrcgsmlb"
