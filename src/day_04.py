@@ -17,7 +17,6 @@ from utils import print_result, read_lines
 from typing import List
 
 
-
 print("> Day 4")
 
 

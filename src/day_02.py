@@ -6,7 +6,7 @@
 # - nothing
 #
 
-from utils import print_result
+from utils import print_result, read_lines
 
 print("> Day 2")
 

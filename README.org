@@ -3,6 +3,11 @@
 This is an attempt to solve AOC 2022 while exploring python features, that are
 new to me (almost all of them, actually).
 
+* Weird things
+Running the source files from shell/venv works fine, however running them from
+emacs with =python-shell-send-file= breaks on modules imports (=No module named
+utils=). As a workaround, run emacs with modified PYTHONPATH pointing to =src/.=
+
 * Things to try out
 ** Importing stuff!
 ** Numpy

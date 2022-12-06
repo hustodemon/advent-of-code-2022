@@ -9,7 +9,7 @@
 # - with open('bla') as bleh:
 #
 
-from utils import print_result
+from utils import print_result, read_lines
 
 
 print("> Day 1")
@@ -30,11 +30,11 @@ def compute_sums(lines):
 #
 # Part 1
 #
-lines_test = utils.read_lines("data/day_01_test.txt")
+lines_test = read_lines("data/day_01_test.txt")
 sums_test = compute_sums(lines_test)
 print_result(1, str(max(*sums_test)), True)
 
-lines = utils.read_lines("data/day_01.txt")
+lines = read_lines("data/day_01.txt")
 sums = compute_sums(lines)
 print_result(1, str(max(*sums)))
 
