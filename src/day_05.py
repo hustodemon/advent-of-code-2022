@@ -60,7 +60,7 @@ def apply_instruction_part_2(how_many, from_where, to_where, stacks):  # from_wh
 
 def compute(path, apply_instruction_fn):
     # some processing first
-    [crate_strings, instruction_strings] = read_str(path).split("\n\n")
+    crate_strings, instruction_strings = read_str(path).split("\n\n")
     crate_layers = crate_strings.splitlines()
     crate_layers = crate_layers[:-1]  # we don't care about the stack names (1, 2, 3...)
     instruction_strings = instruction_strings.splitlines()
