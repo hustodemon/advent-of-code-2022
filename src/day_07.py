@@ -3,7 +3,7 @@
 # Day 7
 #
 # Lessons learned:
-# -
+# - new python 3 pattern matching
 #
 
 from utils import print_result, read_lines
@@ -17,7 +17,6 @@ print("> Day 7")
 # Part 1
 #
 
-#print_result(1, "123", True)
 lines_test = read_lines("data/day_07_test.txt")
 lines = read_lines("data/day_07.txt")
 
