@@ -7,14 +7,6 @@ from day_11 import Monkey
 from utils import read_str
 import pytest
 
-#@pytest.mark.parametrize("i1, i2", [
-#    (SimpleInterval(1, 3), SimpleInterval(1, 2)),
-#    (SimpleInterval(1, 3), SimpleInterval(1, 2)),
-#    (SimpleInterval(-2, 4), SimpleInterval(-1, 3)),
-#])
-#def test_contains_interval(i1, i2):
-#    assert i1.contains_interval(i2)
-
 
 def test_parse_monkey():
     fst_monkey_str = read_str("data/day_11_test.txt").split("\n\n")[0]
